@@ -1,13 +1,8 @@
 package projectBE1.java;
 
-public class Author extends BookStore {
-
+public class Author {
 	private String authorID;
-	private String name;
-
-	public Author() {
-
-	}
+	private String authorName;
 
 	public String getAuthorID() {
 		return authorID;
@@ -17,12 +12,17 @@ public class Author extends BookStore {
 		this.authorID = authorID;
 	}
 
-	public String getName() {
-		return name;
+	public String getAuthorName() {
+		return authorName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setAuthorName(String authorName) {
+		this.authorName = authorName;
+	}
+
+	public Author(String authorID, String authorName) {
+		this.authorID = authorID;
+		this.authorName = authorName;
 	}
 
 }
