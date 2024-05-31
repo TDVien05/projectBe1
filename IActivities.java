@@ -12,4 +12,5 @@ public interface IActivities {
 	void storeBookDataToFile();
 
 	void storeAuthorDataToFile();
+
 }

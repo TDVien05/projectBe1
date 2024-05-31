@@ -1,16 +1,21 @@
 package projectBE1.java;
 
-import java.util.Scanner;
-
 public class Book implements IActivities {
 
 	private String ISBN;
-	private String tittle;
+	private String title;
 	private double price;
-	private Author author;
+	private String authorName;
 
 	public Book() {
 
+	}
+
+	public Book(String iSBN, String title, double price, String authorName) {
+		ISBN = iSBN;
+		this.title = title;
+		this.price = price;
+		this.authorName = authorName;
 	}
 
 	public String getISBN() {
@@ -21,12 +26,12 @@ public class Book implements IActivities {
 		ISBN = iSBN;
 	}
 
-	public String getTittle() {
-		return tittle;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setTittle(String tittle) {
-		this.tittle = tittle;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public double getPrice() {
@@ -37,27 +42,24 @@ public class Book implements IActivities {
 		this.price = price;
 	}
 
-	public Author getAuthor() {
-		return author;
+	public String getAuthorName() {
+		return authorName;
 	}
 
-	public void setAuthor(Author author) {
-		this.author = author;
+	public void setAuthor(String authorName) {
+		this.authorName = authorName;
 	}
 
-	public void addBook() {
-		Scanner scanner = new Scanner(System.in);
+	public Book addBook(String ISBN, String title, double price, String authorName) {
+		Book bookObj = new Book(ISBN, title, price, authorName);
+		return bookObj;
+	}
 
-		System.out.print("Nhập mã số ISBN : ");
-		String newISBN = scanner.nextLine();
-		System.out.print("Nhập tiêu đề sách : ");
-		String newTitle = scanner.nextLine();
-		System.out.print("Nhập giá sách : ");
-		int newPrice = scanner.nextInt();
-		System.out.println("Nhập tác giả : ");
-		String newAuthorID = scanner.nextLine();
-		String newAuthorName = scanner.nextLine();
-
+	public void showBookInfo(Book book) {
+		System.out.println("ISBN : " + book.getISBN());
+		System.out.println("Title : " + book.getTitle());
+		System.out.println("Price : " + book.getPrice());
+		System.out.println("Author name : " + book.getAuthorName());
 	}
 
 	@Override
@@ -86,6 +88,17 @@ public class Book implements IActivities {
 
 	@Override
 	public void storeAuthorDataToFile() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public String toString() {
+		return "Book [ISBN=" + ISBN + ", title=" + title + ", price=" + price + ", authorName=" + authorName + "]";
+	}
+
+	@Override
+	public void addBook() {
 		// TODO Auto-generated method stub
 
 	}
